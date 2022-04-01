@@ -1,0 +1,10 @@
+{% extends "sbis/home.html" %}
+{% block content %}
+<a class="btn btn-primary intro" style="animation: mymove 1.5s; animation-delay: 4s; animation-fill-mode: forwards;">Where Knowledge Liberates</a>
+    <a class="btn btn-primary intro" style="animation: mymove 1.5s; animation-delay: 2s; animation-fill-mode: forwards;">Welcome to portal sbis</a>
+    
+<form action="">
+    {% csrf_token %}
+    <button formmethod="POST" name="login" value="nothing">submit</button>
+</form>
+{% endblock %}

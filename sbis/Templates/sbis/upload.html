@@ -1,0 +1,7 @@
+{% extends "sbis/home.html" %}
+{% block content %}
+<form action="">
+    {% csrf_token %}
+    <button formmethod="POST" name="login" value="nothing">submit</button>
+</form>
+{% endblock %}
