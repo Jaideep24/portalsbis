@@ -1,0 +1,28 @@
+{% extends "sbis/home.html" %}
+{% block content %}
+<div id="accordion">
+{% for i in object_list %}
+<div class="card">
+    <div class="card-header" id="{{ i }}">
+        <h2>
+            <button class="btn " data-toggle="collapse" data-target="#{{ i }}" aria-expanded="false" aria-controls="{{ i }}">
+                title-{{i}}
+              </button>
+        </h2>
+    </div>
+
+    <div id="{{ i }}" class="collapse" aria-labelledby="{{ i }}" data-parent="#accordion">
+        <div class="card-body">
+         {{ i.circular }}
+         <a class="btn btn-primary" href="{{ i.circular_pdf.url }}">{{ i.circular_pdf }}</a>
+        </div>
+      </div>
+    </div>
+    
+{% endfor %}
+</div>
+
+
+
+    
+{% endblock %}

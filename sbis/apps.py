@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SnisConfig(AppConfig):
-    name = 'snis'
+class SbisConfig(AppConfig):
+    name = 'sbis'

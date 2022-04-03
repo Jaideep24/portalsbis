@@ -1,7 +1,15 @@
 {% extends "sbis/home.html" %}
 {% block content %}
-<form action="">
+<h1>Upload your files here</h1>
+<center>
+<form action="" style=" width: 20cm; margin-top: 5%;" enctype="multipart/form-data">
+    <nav class="navbar navbar-light bg-light" style="width: inherit;">
+        <a class="btn btn-danger" style="width: inherit;" aria-disabled="true">
     {% csrf_token %}
+    {{ form.as_ul}}
     <button formmethod="POST" name="login" value="nothing">submit</button>
+        </a>
+    </nav>
 </form>
+</center>
 {% endblock %}

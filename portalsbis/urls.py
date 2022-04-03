@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from sbis.views import *
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",home),
     path("teacher",teacher),
     path("circular",circular),
     path("worksheet",worksheet),
-    path("upload",upload),
+    path("upload",submit_form.as_view()),
+    path("viewlist",Worksheet_list.as_view())
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -23,34 +23,34 @@ class Form(models.Model):
     worksheet_pdf=models.FileField()
 class Form1(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form2(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form3(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form4(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form5(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form6(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form7(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form8(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form9(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class Form10(Form):
     def __str__(self):
-        return (self.circular)
+        return (self.circular_title)
 class teachers(models.Model):
     name=models.CharField(max_length=20, blank=True)
     middle_name=models.CharField(max_length=10, blank=True)
@@ -60,3 +60,6 @@ class teachers(models.Model):
     contact_number=models.IntegerField()
     def __str__(self):
         return (self.name)
+class every_teacher(models.Model):
+    student_name=models.ForeignKey(students,on_delete=models.CASCADE)
+    work_pdf=models.FileField(blank=True)

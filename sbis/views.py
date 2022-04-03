@@ -1,6 +1,11 @@
+from dataclasses import fields
+from re import template
 from django.shortcuts import render
 import requests
 from .models import *
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 # Create your views here.
 students_list=[]
 def home(request):
@@ -16,7 +21,7 @@ def home(request):
         else:
             return (render(request,"sbis/login.html",mydict))
     else:
-        return (render(request,"sbis/home.html",mydict))
+        return (render(request,"sbis/login.html",mydict))
 def teacher(request):
     return(render(request,"sbis/teacher.html"))
 def worksheet(request):
@@ -25,3 +30,10 @@ def circular(request):
     return(render(request,"sbis/circular.html"))
 def upload(request):
     return(render(request,"sbis/upload.html"))
+class submit_form(CreateView):
+    model=every_teacher
+    fields=["student_name","work_pdf"]
+    template_name="sbis/upload.html"
+class Worksheet_list(ListView):
+    model=Form1
+    template_name="sbis/view_worksheets.html"
