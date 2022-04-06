@@ -2,9 +2,21 @@
 {% block content %}
 <a class="btn btn-primary intro" style="animation: mymove 1.5s; animation-delay: 4s; animation-fill-mode: forwards;">Where Knowledge Liberates</a>
     <a class="btn btn-primary intro" style="animation: mymove 1.5s; animation-delay: 2s; animation-fill-mode: forwards;">Welcome to portal sbis</a>
-    
-<form action="">
-    {% csrf_token %}
-    <button formmethod="POST" name="login" value="nothing">submit</button>
-</form>
+    <center>
+        <h1 style="opacity: 0.5; z-index: 1;"> Welcome to Portal SBIS, Where Knowledge Liberates</h1>
+        <div class="alert alert-primary" role="alert" style="width: 50%;">
+            {% for a in teacher %}
+            {% if a.name == teacher_name %}
+            <ul>
+                <li>Name:{{ a.name }}</li>
+                <li>Middle Name:{{ a.middle_name }}</li>
+                <li>Surname:{{ a.surname }}</li>
+                <li>Form:{{ a.form }}</li>
+            </ul>
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+        </center>
+
 {% endblock %}

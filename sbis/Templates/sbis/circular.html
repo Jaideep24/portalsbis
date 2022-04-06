@@ -1,7 +1,17 @@
 {% extends "sbis/home.html" %}
 {% block content %}
-<form action="">
-    {% csrf_token %}
-    <button formmethod="POST" name="login" value="nothing">submit</button>
-</form>
+<div id="accordion">
+    {% for a in students %}
+        {% if a.name == student_name %}
+{% for i in form  %}
+
+{% if i.form == a.form %}
+<h1>{{ i.circular_title }}</h1>
+<div class="alert alert-success">{{ i.circular }}</div>
+<a href="{{ i.circular_pdf.url }}">{{ i.circular_pdf }}</a>
+{% endif %}
+{% endfor %}
+{% endif %}    
+{% endfor %}
+</div>
 {% endblock %}

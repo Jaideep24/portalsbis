@@ -6,8 +6,8 @@
     <nav class="navbar navbar-light bg-light" style="width: inherit;">
         <a class="btn btn-danger" style="width: inherit;" aria-disabled="true">
     {% csrf_token %}
-    {{ form.as_ul}}
-    <button formmethod="POST" name="login" value="nothing">submit</button>
+    {{ form.as_p }}
+    <button formmethod="POST">submit</button>
         </a>
     </nav>
 </form>

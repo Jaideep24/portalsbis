@@ -21,10 +21,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",home),
-    path("teacher",teacher),
-    path("circular",circular),
-    path("worksheet",worksheet),
+    #path("teacher",teacher),
+    path("upload_circular",circular_form.as_view()),
+    path("upload_worksheet",worksheet_form.as_view()),
     path("upload",submit_form.as_view()),
-    path("viewlist",Worksheet_list.as_view())
+    path("viewlist",worksheet),
+    path("circular",circular)
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

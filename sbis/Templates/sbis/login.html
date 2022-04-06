@@ -1,8 +1,12 @@
 {% extends "sbis/home.html" %}
 {% block content %}
-<form action="">
+<h1>Login</h1>
+<center>
+<form class="alert alert-secondary" action="">
     {% csrf_token %}
+<p>Enter name</p>
     <input type="text" title="Name" name="input">
     <button formmethod="POST" name="login" value="nothing" data-value="Jaideep">submit</button>
 </form>
+</center>
 {% endblock %}
